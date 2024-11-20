@@ -1,0 +1,51 @@
+//// day1
+
+to create html file type html:5 and tab
+
+document.createElement("h1"); to create html element in javascript
+
+const heading = document.createElement("h1"); // for creation of h1 tag
+heading.innerHTML = "hello world from javascript"; putting value in h1 tag
+const root = document.getElementById("root"); find div with id root.
+root.appendChild(heading); passing h1 to it.
+
+what is cdn? content dilvery network.
+
+what is crossorigin in react cdn.
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+this core file for react.
+
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+this is dom manipulation.
+
+why not club together bzc react work on both web & phone
+
+a) const heading = React.createElement("h1",{//place for attribute like id:"heading" for h1 tag },"Hello world from react"); // here we have used react feature bzc that work of react to create element
+b) const root = ReactDom.createRoot(document.getElementById("root")); // but here we have we used react dome bzc that work dom to interact with html stuff
+C) root.render(heading); // normal reader part. render convert all react code to html part.
+
+above a & b statement are javascript object, until they are render.
+most costly operation in web in add and delete of node and to manuplate it.
+
+React.createElement => object,
+reader = html(browser understands)
+
+[React.createElement("h1",{id:"heading1"},"I am h1 tag."),React.createElement("h2",{},"I am h2 tag.")]
+for multiple children create array of children.
+
+but it can become headace when it is to much nested element for that reason we have JSX
+
+sequence of file is imp
+bzc react
+    ReactDom
+    app.js
+
+
+
+what is diff btw development and production react.js cdn
+react replace everything in root with it.
+react is library.
+it can work wherever it is called.
+framework where whole app should developed with but react can be injected in per existing code of js
+
+// day2
