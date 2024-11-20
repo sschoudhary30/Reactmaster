@@ -49,3 +49,31 @@ it can work wherever it is called.
 framework where whole app should developed with but react can be injected in per existing code of js
 
 // day2
+
+npm is package manager
+npm manage dependency version.
+package.json is configuration for npm.
+most imp package is bundler.
+like vite , webpack ,parcel etc.
+
+
+npm install -D parcel
+what is -D one dev dependency
+and other normal dependency 
+
+parcel is beast for management
+"parcel": "^2.13.0"
+^ is called crat, it will automatic update minior update
+` is called as tilday for major vesion update automatic.
+
+diff package.json= approx version and package-lock.json => proper version.
+node_modules contain actual data of dependency.
+node_modules also have transitive dependency
+
+every lib have there own dependency. like package.json.
+
+if we don't want to put some file in production.
+
+if we have  package-lock and package.json on git bzc we can create, no need of node_modules.
+
+

@@ -1,0 +1,22 @@
+{
+  "name": "dayone",
+  "version": "1.0.0",
+  "description": "this namaste react by suresh bhai",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "(https://github.com/sschoudhary30/Reactmaster.git)"
+  },
+  "keywords": [
+    "react",
+    "baby"
+  ],
+  "author": "suresh",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.13.0"
+  }
+}
