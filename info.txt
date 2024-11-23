@@ -76,4 +76,289 @@ if we don't want to put some file in production.
 
 if we have  package-lock and package.json on git bzc we can create, no need of node_modules.
 
+to start app with parcel
+command npx parcel index.html
+npx mean ecute package.
 
+when we use react by install react not by cdn
+then we have mention type in script tag as module.
+like this <script type="module" src="./app.js">;
+
+parcel offer:-
+    - Dev Build
+    - Local Server creation
+    - refresh page, or doing HMR => Hot Module Replacement.
+    - Pacel use file watching algorithm to make change so fast. which is written in c++.
+    - it gives faster build for you - by caching.
+    - Image optimization for image loading as it expensive.
+    - Minification of file
+    - Bundling
+    - compress of file.
+    - consistent hashing (read about it)
+    - code splitting
+    - differential Bundling - to support old browser
+    - diagnostic
+    - Error handling
+    - it also support host on https
+    - *** read parcel documentation
+    - tree shaking algorithm - will remove unused code.
+    - differential build for dev(less optmize) and production(prod build)
+    
+    {  ** error area
+        4 |   "description": "this namaste react by suresh
+        > 5 |   "main": "app.js",
+        >   |           ^^^^^^^^ Did you mean "app.html"?   
+         6 |   "scripts": {
+        7 |     "test": "jest"
+
+    }
+        when we use npx parcel build index.html and our package.json have entry point and main.
+        then it error.
+        bzc parcel dont't need it.
+        prod build is highly optimize build.
+    
+    dist fill is created for fast working
+
+How to make project old browser support ready.
+by browser list.
+go on browserlist.dev
+
+in package.json 
+add new object named browserList.
+
+
+/// day 3
+
+how to npm script:
+    - create script in package.json
+    - then script object.
+
+    per npx parcel index.html
+
+    "start":"parcel index.html",
+    "build":"parcel build index.html"
+
+    after npm run start  or  npm start also work
+    npm build won't work
+
+
+React element are equilvalent to react-dom element.
+React element is at the end is object.
+
+normal react code become to clumsy to react.
+so jsx was developed to help react dev fast.
+
+
+// below is jsx way to make html element in react.
+const jsxheading = <h1>suresh is daddy of coding 💀</h1>
+
+jsx is html like syntax or closure to XML, not html.
+
+jsx is not pure javascript, bzc js understand ecamascript.
+so here webpack(parcel) is doing work, it transpile jsx code befor it go jsengine.
+jsx code is transpile befor it go to JS Engine.
+transpile is done by parcel.
+but parcel is manager and actual work is done by babel.
+
+this follow of React
+React.createElement => ReactElement- JS Object => HTML-Element(render)
+
+this follow for JSX
+JSX => babel transpliles it to React.createElement => ReactElement- JS Object => HTML-Element(render).
+
+Read more about babel, which is javascript compiler.
+
+In Html we have class and in jsx we have className.
+In Jsx attribute are given in camelcase format.
+
+explore various attribute for tag in jsx.
+multiple line jsx should be wrap in () brackets, for babel to understand it.
+
+
+*** React Component
+Types of React component
+    - Class based components - old way of writting of code.
+    - Functional based componens - New way of components. most used one.
+        - there is short hand way for this.
+        -React function based component is just javascript functional.
+        Name it with capital letter it is react way to get now it is component.
+
+what is component composition
+ - it means to put one component inside another.
+    example
+    const HeadingComponent3 = () =>(
+        <div id="container">
+            <HeadingComponent2/>
+            <h1> this is React Functional based component fir see💀.</h1>
+        </div>
+    
+    );
+
+ ***
+ // at end of the day it all javascript so basic fund is same for const and call element, sequenceing element.
+
+if some attacker can run some js file in our pc then it is called as cross-site scripting.
+it can steal cookies. can read local storage and many more.
+by injections attact by bad api.
+but jsx take care of it by santize data, when it is enclose in '{}' this brackets.
+
+*** React component ***
+    -<reactComponent/>
+    -<reactComponent></reactComponent>
+    {reactComponent()}
+
+    this 3 way are same.
+
+    and react Component are basically arrow function so
+    we can call this way also
+    {reactComponent()}
+
+jsx is making our code more readable. 
+
+// day4
+
+Notes or tips :- Before building anything plan.
+FooDQ
+    - make ui design or outline of design.
+
+design structure
+    - Header
+        - logo
+        - nav link
+    - Body
+        - search
+        - restaurant card container
+            - restaurant card
+                - Image
+                - Nave shop
+                - star rating
+                - cuisine, devlivery time.
+
+    - Footer
+        - Copyright
+        - Links
+        - Address
+        - Contact
+we can write css inside jsx
+
+by making element or direct way.
+    const StyleCard = {
+    backgroundColor:"#f0f0f0",
+    }
+    <div className="res-card"style={StyleCard}>
+
+    or
+
+    <div className="res-card"style={{backgroundColor:"#f0f0f0",}}>
+
+
+props
+ props are basically properties which we can pass dynamically to function.
+
+ props => to component
+ is similar to passing 
+ passing argument to function.
+
+ dynamically data passing is by props
+
+ in arrow function you pass (props) // which multiple value together
+calling of it: {props.resName} at data place
+
+ or ({resName, cuisine}) in this also 
+
+ {resName} at data place
+
+ swiggy have config driven UI
+    - controling UI with Data which is coming from server.
+
+ui layer + data layer is equal to good software engineer.
+
+
+for online hosting of image for large scale project we can use cloudnary cdn. 
+
+                This dynamic calling of data. learn more of map, reduce, filter   
+                // whenever we use looping property give key proprety to identify component.
+
+                what is use of key in looping process?
+                why we need keys.
+                    - if don't have key then react don't know is new card.
+                        and it will re render all of them.
+
+                    but if have unique id then we have cache of it.
+                    whenever have map and keys.
+
+                    *** Never use index as keys by react doc.
+                resList.map((restaurant) => (<RestaurentCard key={restaurant.id} resData={restaurant}/>))
+
+# React Blog for file structure.
+            
+    Name file porperly
+    or file name same as component name.
+
+    .js or .jsx or .tsx are same only.
+
+
+    Never Keep hard coded data in component folder.
+    also hard code string link also.
+
+    keep them in util or comman, config or constant this are type of file name.
+
+Ways of Import and Export:-
+    - defualt where component exported
+    - named any link or multiple thing.
+
+Named expo & Impo
+    - export const Some_URL = "something";
+
+
+    Importing syntax
+    - import {Some_URL} from "../../utils/contants"
+
+can we apply both method on impo & expo on something at same time.
+
+
+## *** React Hookes.
+
+
+// Noraml js variable
+
+let ListOfRestaurants = []
+
+// State variable - super powerful variable with react power.
+    - for that we use react hook
+        a hook normzal is js element.
+
+# React hook
+    Normal JS utility function in side react file.
+
+    2 imp hook
+        - useState() - superpowerful state variable in react.
+        - useEffect()
+
+whenever State variable update react re render component.
+
+React algorithm 
+    react uses Reconciliation algorithm
+    - which is also called as react fiber
+
+    -react create virtual dom (which representation of actual dom)
+        which object like react element.
+
+        virtual dom is object of dom.
+
+dif algorithm 
+    
+    - find out diffrence between old and new virtual dom.
+     finding diff in object is easy and fast.
+    
+    it dose not touch html dom structure.
+calculate diff and update.
+
+virtual dom fast manupilation is real power of react. that core funda.
+
+Incremental readering is also to make fast.
+read React Fiber Architecture.
+
+In React 16 new algo came for updatation virtual dom was react fiber.
+
+EP 5 is full of knowledge
