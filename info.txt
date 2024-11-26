@@ -362,3 +362,179 @@ read React Fiber Architecture.
 In React 16 new algo came for updatation virtual dom was react fiber.
 
 EP 5 is full of knowledge.
+
+
+// day 4 ep 6 & ep7
+
+Design Architecture:
+    - Monolith 
+        - Everything code in same service.
+
+
+
+    - macrosrvice
+        
+        different service for diif work made difrently.
+
+        microservice is know as separation of concern or single responsiblility principle.
+
+        backend , frontend , data all diffrenet.  
+
+
+microservice 
+    you can have diffrenet teck stack for diffrent for diffrenet service.
+
+  BE   <=> UI  AUTH
+|| \\
+DB   SM  GMAIL
+
+
+HOW deployed and HOW to axcess or interact. 
+    - by port calling.
+
+ALL service run on there perticular port.
+OUR UI in REACT.
+
+Tow approuch for API calling data fetching from backend.
+
+    1* Loads => api call(wait 500 ms) => render
+    2* Loads => Render(what we have) => api call(wait 500 ms) => Render. (Better appro and Better UX give)
+
+REACT HOOK is normal JS Function.
+
+useEffect[() => {},[]]
+useEffect have two argument.
+    - arrow function
+    - dependency array.
+
+useEffect Hook working
+    - first the component get loaded fully.
+    then useEffect function is called.
+    then new data load.
+
+CORS Policy. which by our browser. due to origin change conflict.
+
+
+shimmer ui to remove boring loading stuff.
+
+for ui project use shimmer UI. for better loading screen.
+
+// conditional rendering by ternary operation
+return ListOfRestaurants.length === 0 ? <Shimmer/> :(
+    <div className="body">
+
+
+local javascript variable:
+    they don't change dynamically to UI.
+    for that purpose useState.
+but in useState variable we can track state of variable for updation purpose.
+useState variable re render whole component.
+    but only change diff part by diff algo.
+
+
+Blinding concept is use in search box.
+const [searchText, setsearchText] = useState("");
+<input type="text" className='search-box' value={searchText} //here blinding is doen onChange={ (e) => {
+                        searchText(e.target.value);
+                        // onChange handle for updation of value
+                    }}/>
+                    <button onClick={() => {
+                        // Filter the restraunt cards and update the UI.
+                        // search text.
+
+                    }}>search</button>
+
+
+// whenever State variable update, react triggers a Reconciliation cycle(re- renders the Component)
+ but only change part by diff algo.  
+
+//day6.
+ 
+// never create useState outside component and create at top inside inside functional component.
+    // never create hook inside if else loop. it will create inconsistency.
+    const [btnNameReact, setbtnNameReact ] = useState("login");
+
+    // If no dependency array => useEffect is called on every rendering(basic nauture).
+    // If dependency array is empty = [] => useEffect is called on initial render(just once).
+    // If dependency array is [dependency] => called everytime dependency is updated.
+
+// For routing purpose we use react lib which is
+    react router dom 
+    npm i react-router-dom
+
+for developing route we have to create route configuration. 
+
+react-router-dom gives acess to importent hook named:
+    - useRouteError it gives info of error, to get more clearity.
+
+children route concept:-
+
+    - {
+        path:"/",
+        element: <AppLayout/>,
+        Children: [
+
+            // this child routing where some remain part ramain constant and some render
+            like header remain same but lower body change
+            {
+                path:"/about",
+                element: <About/>,
+        
+            },
+            {
+                path:"/Contact",
+                element:<Contact />,
+            }
+
+        ],
+        errorElement: <Error />, 
+    },
+
+    // main routing 
+    {
+        path:"/about",
+        element: <About/>,
+
+    },
+    {
+        path:"/Contact",
+        element:<Contact />,
+    }
+
+    <Header/>
+            {/** if path = / */}
+            <Body/>
+            {/** if path = /about */}
+            <About />
+            {/** if path = /contact */}
+            <Contact />
+ when you are with react and we want route some page never use a tag
+    - reason :  bcz whole page refresh.
+
+    use 
+    link which is given by react-route-dom.
+    Link is warpper over a tag.
+
+    due to link funda react application are called as single page application.
+
+    there are type of routing in web app.
+        - Client side routing.
+            all component all ready loader it render whenever need.
+            why client side routing.
+
+        - Server side routing.
+            it relode whole , basically make network call.
+
+let see dynamic routing. 
+
+
+// Read about graphQL for overfectching and underfetching. 
+
+const { resId } = useParams(); dynamic use of it.
+
+params.
+
+// Class Based Component.
+
+In class based component way we write super props
+
