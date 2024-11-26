@@ -361,4 +361,4 @@ read React Fiber Architecture.
 
 In React 16 new algo came for updatation virtual dom was react fiber.
 
-EP 5 is full of knowledge
+EP 5 is full of knowledge.
