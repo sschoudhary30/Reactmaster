@@ -1,12 +1,17 @@
 import React, { useState } from "react"; 
 import Shimmer from "./Shimmer";
 import { useParams  } from "react-router-dom"; 
+import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 const RestaurentMenu = () => {
 
-    const [resInfo, setresInfo] = useState(null);
+    //const [resInfo, setresInfo] = useState(null);
     const { resId } = useParams();
+    const resInfo  = useRestaurantMenu(resId);
 
+    {/** 
+
+        // this before custom hook.   
     useEffect(()=>{
         fetchMenu();
 
@@ -18,6 +23,8 @@ const RestaurentMenu = () => {
         
         setresInfo(json.data)
     }
+
+    */}
 
     if (resInfo === null) <Shimmer />; 
 

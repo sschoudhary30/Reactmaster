@@ -538,3 +538,72 @@ params.
 
 In class based component way we write super props
 
+Use this key word to acess props in class based component. 
+// Never update state variables directly.
+
+Render cycle method in class based component.
+
+Mounting and loading are same it update on webpage.  
+
+in class based component:
+    - first constructor is called
+    - then render called.
+
+    cache is in componentDidMount();   // read more about it.
+
+    use of componentDidMount
+        - for making api call.
+
+        thing which are done only after component is mounted.
+
+
+react life cycle diagram. 
+    - render phase
+        - constructure
+        - render
+    <dom is updated> in single batch. by diff algo. 
+    - commit phase
+        - react update
+        - componentDidMount.
+
+    phase batch together for more optimization. for mutliple children.
+    bcz dom manipulation is expensive for that reason.
+
+why i can not use asyn in useEffect and useState.
+
+
+// how to make app fast ep 9
+
+1> single responsiblility principle. one work to one component.
+- code resuble
+maintainable
+
+testable.
+
+keep component light wieghted.
+
+// custom hook. - code more readable and useable.
+
+
+for custom hook first finalized contract.
+
+like input and output.
+
+props is input amd return is output.
+
+collor mean where this hook would be used.
+
+
+we can simulate offline case in inspect only by network and no throlleling
+
+learn about linter.
+
+make aap down in smaller pices. like small logical  bundle. pr chunking.
+lazy loading, dynamic bundling and code splitting.
+on demand loading.
+  
+ 
+
+
+
+ 
